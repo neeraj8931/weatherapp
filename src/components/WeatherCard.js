@@ -1,25 +1,49 @@
 
+// write a new componet to pass forecast and show the 24 hours data
 
+import HourlyStatus from "./HourlyStatus";
 
 const WeatherCard = (props)=>{
     // console.log(props);
-    const {current,location } ={...props.weather};
+    const {current,forecast,location } = {...props.weather};
 
     return(
         <>
-         <div className="w-fit md:w-2/5 bg-black text-white p-10 mx-auto rounded-3xl">
-         <div className="card-header flex justify-around">
+         <div className="py-10 text-center">
+         <div className="card-header">
             <div className="city-name">
-                <h2 className="text-4xl text-bold">{location.name}</h2>
-                <span className="text-center my-6">{location.region} / {location.country}</span>
+                <h2 className="text-3xl text-bold">{location.name} <span className="">, {location.country}</span></h2> 
             </div>
-            <div className="current-materics text-center ml-9">
-            <img src={current.condition.icon} alt={current.condition.text} />
-            <p>{current.condition.text}</p>
-            <p>{current.temp_c} °C</p>
+            <div className="current-materics-today">
+            <p className="text-5xl py-5">Today</p>
+            <p className="text-xl">{current.last_updated}</p>
+            <p className="text-7xl my-16">{current.temp_c} °C</p>
+            <p className="text-xl">Feels like- {current.feelslike_c}  °C</p> 
             </div>
-         </div>    
+            <HourlyStatus hours={forecast.forecastday[0]}/>
+         </div>   
          </div>
+         <div className="card-footer h-48 bg-white rounded-t-3xl">
+                <div className="current-condition flex justify-between flex-wrap">
+                  <div className="w-1/2 p-4 mt-2">
+                    <p className="text-xl">WIND-SPEED</p>
+                       <p className="text-4xl py-5"> {current.wind_kph}</p>
+                  </div>
+                  <div className="w-1/2 p-4 mt-2">
+                    <p className="text-xl">HUMIDITY</p>
+                       <p className="text-4xl py-5"> {current.humidity}</p>
+                  </div>
+                  <div className="w-1/2 p-4 mt-2">
+                    <p className="text-xl">WIND-DIRECTION</p>
+                       <p className="text-4xl py-5"> {current.wind_dir}</p>
+                  </div>
+                  <div className="w-1/2 p-4 mt-2">
+                    <p className="text-xl">PRESSURE</p>
+                       <p className="text-4xl py-5"> {current.pressure_in}</p>
+                  </div>
+                   
+                </div>
+         </div> 
         </>
     )
 };
