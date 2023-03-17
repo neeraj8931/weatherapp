@@ -11,7 +11,7 @@ const Weather = ()=> {
     const [send, setSend] = useState(false)
     const [ city, setCity ] = useState('pune');
     console.log(city);
-    console.log(process.env.RAPIDAPI_KEY);
+    console.log(process.env.RAPIDAPI_KEY,"testing"); 
 
    
   // fetching live weather
