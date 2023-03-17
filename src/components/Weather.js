@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import WeatherCard from "./WeatherCard";
-import weather from "../../helpers/data";
+import weather from "../helpers/data";
 import SearchIcon from '@mui/icons-material/Search';
 require('dotenv').config()
 
