@@ -9,7 +9,7 @@ const WeatherCard = (props)=>{
 
     return(
         <>
-         <div className="py-10 text-center">
+         <div className="py-10 text-center md:w-1/2">
          <div className="card-header">
             <div className="city-name">
                 <h2 className="text-3xl text-bold">{location.name} <span className="">, {location.country}</span></h2> 
@@ -17,13 +17,13 @@ const WeatherCard = (props)=>{
             <div className="current-materics-today">
             <p className="text-5xl py-5">Today</p>
             <p className="text-xl">{current.last_updated}</p>
-            <p className="text-7xl my-16">{current.temp_c} °C</p>
-            <p className="text-xl">Feels like- {current.feelslike_c}  °C</p> 
+            <p className="text-7xl my-5">{current.temp_c} °C</p>
+           
             </div>
             <HourlyStatus hours={forecast.forecastday[0]}/>
          </div>   
          </div>
-         <div className="card-footer h-48 bg-white rounded-t-3xl">
+         <div className="card-footer bg-white rounded-t-3xl md:rounded-3xl md:m-5 text-black md:w-1/2">
                 <div className="current-condition flex justify-between flex-wrap">
                   <div className="w-1/2 p-4 mt-2">
                     <p className="text-xl">WIND-SPEED</p>
