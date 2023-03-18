@@ -55,13 +55,13 @@ const Weather = ()=> {
  
    const resultData = (
                 <div className="bg-slate-800 text-white h-screen">
-                <div className="flex w-4/5 mx-auto h-24 border-b-2 text-center">
+                <div className="flex w-4/5 mx-auto md:h-24 border-b-2 text-center">
                 <input className="bg-transparent p-5 text-white w-4/5 focus:outline-none focus:text-4xl" type='search' placeholder="cityname" onChange={handleChange} value={city} /> 
                 <span className="mx-2  text-white font-bold p-5 rounded group text-4xl" onClick={handleSearch}> 
                 <SearchIcon />
                 </span> 
                 </div>
-                   <div className="md:flex md:overflow-hidden lg:pt-5 h-[calc(100vh-96px)]"> 
+                   <div className="md:flex mt-16 md:mt-0 md:overflow-hidden lg:pt-5 h-[calc(100vh-96px)]"> 
                    {weatherData.current?  <WeatherCard weather={weatherData}/>: <Error responseError={weatherData} />}
                    </div>
                 </div>
